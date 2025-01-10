@@ -67,19 +67,50 @@ public class Main {
             System.out.println(team);
         }
             
-        
 
         // game result
         System.out.println("Group 1");
         int game = 1;
+        int[] point_1 = new int[4];
+        int[] goal_scored_1 = new int[4];
+        int[] goal_received_1 = new int[4];
         for (int i = 0; i < 4; i++) {
             for (int j = i + 1; j < 4; j++) {
                 System.out.println("game" + game);
-                System.out.println( group1[i] + " VS " + group1[j]);
+                System.out.println(group1[i] + " VS " + group1[j]);
                 System.out.println("please enter the result, seperated by space");
-                
-
+                String[] result = sc.nextLine().split(" ");
+                if (Integer.parseInt(result[0]) == Integer.parseInt(result[1])) {
+                    point_1[i] += 1;
+                    point_1[j] += 1;
+                    goal_scored_1[i] += Integer.parseInt(result[0]);
+                    goal_scored_1[j] += Integer.parseInt(result[1]);
+                    goal_received_1[i] += Integer.parseInt(result[1]);
+                    goal_received_1[j] += Integer.parseInt(result[0]);
+                    game++;
+                }
+                else if (Integer.parseInt(result[0]) > Integer.parseInt(result[1])) {
+                    point_1[i] += 3;
+                    point_1[j] += 0;
+                    goal_scored_1[i] += Integer.parseInt(result[0]);
+                    goal_scored_1[j] += Integer.parseInt(result[1]);
+                    goal_received_1[i] += Integer.parseInt(result[1]);
+                    goal_received_1[j] += Integer.parseInt(result[0]);
+                    game++;
+                }
+                else if (Integer.parseInt(result[0]) < Integer.parseInt(result[1])) {
+                    point_1[i] += 0;
+                    point_1[j] += 3;
+                    goal_scored_1[i] += Integer.parseInt(result[0]);
+                    goal_scored_1[j] += Integer.parseInt(result[1]);
+                    goal_received_1[i] += Integer.parseInt(result[1]);
+                    goal_received_1[j] += Integer.parseInt(result[0]);
+                    game++;
+                }
             }
+        }
+        for (int i = 0; i < 4; i++) {
+            System.out.println(group1[i] + " total points: " + point_1[i] + " goals scored: " + goal_scored_1[i] + " goal received: " + goal_received_1[i]);
         }
     }
 }
