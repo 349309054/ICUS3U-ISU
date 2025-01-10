@@ -29,7 +29,7 @@ public class Main {
             System.out.print(", ");
         }
         System.out.println("enter \"confirm\" to continue");
-        if (sc.nextLine().equals("confirm")){
+        if (sc.nextLine().toLowerCase().equals("confirm")){
             System.out.println("Continuing");
         }
         else{
@@ -69,16 +69,16 @@ public class Main {
             
 
         // game result
-        System.out.println("Group 1");
+        System.out.println("Group 1 ");
         int game = 1;
         int[] point_1 = new int[4];
         int[] goal_scored_1 = new int[4];
         int[] goal_received_1 = new int[4];
         for (int i = 0; i < 4; i++) {
             for (int j = i + 1; j < 4; j++) {
-                System.out.println("game" + game);
+                System.out.println("Game " + game);
                 System.out.println(group1[i] + " VS " + group1[j]);
-                System.out.println("please enter the result, seperated by space");
+                System.out.println("Please enter the score of the game, seperated by space");
                 String[] result = sc.nextLine().split(" ");
                 if (Integer.parseInt(result[0]) == Integer.parseInt(result[1])) {
                     point_1[i] += 1;
