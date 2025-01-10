@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.ArrayList;
 public class Main {
     public static void main(String[] args) {
        Scanner sc = new Scanner(System.in);
@@ -38,13 +39,47 @@ public class Main {
         //Assign teams
         String[] group1 = new String[4];
         String[] group2 = new String[4];
+        int[] assignedIndices = new int[8];
         int counter = 0;
-        while(counter < 4){
+        int counter2 = 0;
+
+
+        //putting teams in groups
+        while(counter < 4 || counter2 < 4){
             int n = (int)(Math.random()*(8));
-            // seprate and check if team is in a geoup or not repated
+             if (assignedIndices[n] == 0) {
+                assignedIndices[n] = 1; 
+                 if (counter < 4) {
+                    group1[counter++] = team_list[n];
+                } else {
+                    group2[counter2++] = team_list[n];
+                }
+            }
+
+        }
+        System.out.println("\nGroup 1:");
+        for (String team : group1) {
+            System.out.println(team);
         }
 
-
+        System.out.println("\nGroup 2:");
+        for (String team : group2) {
+            System.out.println(team);
+        }
+            
         
+
+        // game result
+        System.out.println("Group 1");
+        int game = 1;
+        for (int i = 0; i < 4; i++) {
+            for (int j = i + 1; j < 4; j++) {
+                System.out.println("game" + game);
+                System.out.println( group1[i] + " VS " + group1[j]);
+                System.out.println("please enter the result, seperated by space");
+                
+
+            }
+        }
     }
 }
