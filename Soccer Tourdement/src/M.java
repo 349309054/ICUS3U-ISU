@@ -1,6 +1,6 @@
 import java.util.Scanner;
 import java.util.ArrayList;
-public class Main {
+public class M{
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         // Store the team names
@@ -271,8 +271,8 @@ public class Main {
             goal_list.add(element);
         }
 
-    
-
+        System.out.println(goal_list);
+        sc.close();
         //Semi-Final
 
         String[] Final = new String[2];
@@ -332,7 +332,7 @@ public class Main {
 
         goal_list.set(advanced_1, goal_list.get(advanced_1) + goal_1);
         goal_list.set(4 + advanced_4, goal_list.get(advanced_4 + 4) + goal_2);
-    
+        System.out.println(goal_list);
 
 
         System.out.println("Semi-Final 2: " + group1[advanced_2] + " VS " + group2[advanced_3]);
@@ -378,7 +378,7 @@ public class Main {
 
         goal_list.set(advanced_2, goal_list.get(advanced_2) + goal_3);
         goal_list.set(4 + advanced_3, goal_list.get(advanced_3 + 4) + goal_4);
-    
+        System.out.println(goal_list);
 
         //Final
         System.out.println("The Final is " + Final[0] + "vs" + Final[1]);
