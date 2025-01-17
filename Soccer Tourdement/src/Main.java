@@ -421,6 +421,7 @@ public class Main {
             }
         }
         System.out.println("The top scorer is team " + team_list[goal_list.indexOf(max)]);
+        
         System.out.println("Which scored a total of " + max + " goals");
 
 
