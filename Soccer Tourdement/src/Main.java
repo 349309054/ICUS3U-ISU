@@ -209,6 +209,7 @@ public class Main {
             System.out.println(group2[i] + " has a total points of: " + point_2[i] + "| Goals scored: " + goal_scored_2[i] + "| Goal received: " + goal_received_2[i]);
             System.out.println("--------------------------------------------------------");
         }
+        sc.close();
 
         //Advance from Group 2
         int[] goal_difference2 = new int[4];
@@ -284,10 +285,6 @@ public class Main {
         String[] semi_2 = new String[2];
         semi_2[0] = group1[advanced_2];
         semi_2[1] = group2[advanced_3];
-        System.out.println(advanced_1);
-        System.out.println(advanced_2);
-        System.out.println(advanced_3);
-        System.out.println(advanced_4);
 
         System.out.println("Semi-Final 1: " + group1[advanced_1] + " VS " + group2[advanced_4]);
         int goal_1 = (int) (Math.random() * 10);
@@ -295,37 +292,37 @@ public class Main {
         if (goal_1 == goal_2){
             while(goal_1 == goal_2){
                 int i = 1;
-                System.out.println("It is a tie, entering round" + i + "penalties kick");
+                System.out.println("It is a tie, entering round " + i + " penalties kick");
                 int penalties_1 = (int)(Math.random() * 5);
                 int penalties_2 = (int)(Math.random() * 5);
                 goal_1 += penalties_1;
                 goal_2 += penalties_2;
                 i ++;
             }
-            System.out.println("After the penalties kick, the result is: " + goal_1 + ":" + goal_2);
+            System.out.println("After the penalties kick, the result is: " + goal_1 + "-" + goal_2);
             if (goal_1 < goal_2){
-                System.out.println("The result is: " + goal_1 + ":" + goal_2);
-                System.out.println(semi_1[1] + "advances to the final");
+                System.out.println("The result is: " + goal_1 + "-" + goal_2);
+                System.out.println(semi_1[1] + " advances to the final");
                 Final[0] = semi_1[1];
                 Final_index_1 = 4 + advanced_4;
             }
             else if (goal_1 > goal_2){
-                System.out.println("The result is: " + goal_1 + ":" + goal_2);
-                System.out.println(semi_1[0] + "advances to the final");
+                System.out.println("The result is: " + goal_1 + "-" + goal_2);
+                System.out.println(semi_1[0] + " advances to the final");
                 Final[0] = semi_1[0];
                 Final_index_1 = advanced_1;
             }
         }
         else
         if (goal_1 < goal_2){
-            System.out.println("The result is: " + goal_1 + ":" + goal_2);
-            System.out.println(semi_1[1] + "advances to the final");
+            System.out.println("The result is: " + goal_1 + "-" + goal_2);
+            System.out.println(semi_1[1] + " advances to the final");
             Final[0] = semi_1[1];
             Final_index_1 = 4 + advanced_4;
         }
         else if (goal_1 > goal_2){
-            System.out.println("The result is: " + goal_1 + ":" + goal_2);
-            System.out.println(semi_1[0] + "advances to the final");
+            System.out.println("The result is: " + goal_1 + "-" + goal_2);
+            System.out.println(semi_1[0] + " advances to the final");
             Final[0] = semi_1[0];
             Final_index_1 = advanced_1;
         }
@@ -341,22 +338,22 @@ public class Main {
         if (goal_3 == goal_4){
             while(goal_3 == goal_4){
                 int i = 1;
-                System.out.println("It is a tie, entering round" + i + "penalties kick");
+                System.out.println("It is a tie, entering round " + i + " penalties kick");
                 int penalties_1 = (int)(Math.random() * 5);
                 int penalties_2 = (int)(Math.random() * 5);
                 goal_3 += penalties_1;
                 goal_4 += penalties_2;
                 i ++;
             }
-            System.out.println("After the penalties kick, the result is: " + goal_3 + ":" + goal_4);
+            System.out.println("After the penalties kick, the result is: " + goal_3 + "-" + goal_4);
             if (goal_3 < goal_4){
-                System.out.println("The result is: " + goal_3 + ":" + goal_4);
+                System.out.println("The result is: " + goal_3 + "-" + goal_4);
                 System.out.println(semi_2[1] + " advances to the final");
                 Final[1] = semi_2[1];
                 Final_index_2 = 4 + advanced_3;
             }
             else if (goal_3 > goal_4){
-                System.out.println("The result is: " + goal_3 + ":" + goal_4);
+                System.out.println("The result is: " + goal_3 + "-" + goal_4);
                 System.out.println(semi_2[0] + " advances to the final");
                 Final[1] = semi_2[0];
                 Final_index_2 = advanced_2;
@@ -364,13 +361,13 @@ public class Main {
         }
         else
         if (goal_3 < goal_4){
-            System.out.println("The result is: " + goal_3 + ":" + goal_4);
+            System.out.println("The result is: " + goal_3 + "-" + goal_4);
             System.out.println(semi_2[1] + " advances to the final");
             Final[1] = semi_2[1];
             Final_index_2 = 4 + advanced_3;
         }
         else if (goal_3 > goal_4){
-            System.out.println("The result is: " + goal_3 + ":" + goal_4);
+            System.out.println("The result is: " + goal_3 + "-" + goal_4);
             System.out.println(semi_2[0] + " advances to the final");
             Final[1] = semi_2[0];
             Final_index_2 = advanced_2;
@@ -381,35 +378,35 @@ public class Main {
     
 
         //Final
-        System.out.println("The Final is " + Final[0] + "vs" + Final[1]);
+        System.out.println("\nThe Final is: " + Final[0] + " VS " + Final[1]);
         int Goal_1 = (int) (Math.random() * 10);
         int Goal_2 = (int) (Math.random() * 10);
         if (Goal_1 == Goal_2) {
             while (Goal_1 == Goal_2) {
                 int i = 1;
-                System.out.println("It is a tie, entering round" + i + "penalties kick");
+                System.out.println("It is a tie, entering round " + i + " penalties kick");
                 int penalties_1 = (int) (Math.random() * 5);
                 int penalties_2 = (int) (Math.random() * 5);
                 Goal_1 += penalties_1;
                 Goal_2 += penalties_2;
                 i++;
             }
-            System.out.println("After the penalties kick, the result is: " + Goal_1 + ":" + Goal_2);
+            System.out.println("After the penalties kick, the result is: " + Goal_1 + "-" + Goal_2);
             if (Goal_1 < Goal_2) {
-                System.out.println("The result is: " + Goal_1 + ":" + Goal_2);
-                System.out.println(Final[1] + " Win the game!");
+                System.out.println("The result is: " + Goal_1 + "-" + Goal_2);
+                System.out.println(Final[1] + " won The Tournament!");
 
             } else if (Goal_1 > Goal_2) {
-                System.out.println("The result is: " + Goal_1 + ":" + Goal_2);
-                System.out.println(Final[0] + " Win the game!");
+                System.out.println("The result is: " + Goal_1 + "-" + Goal_2);
+                System.out.println(Final[0] + " won The Tournament!");
             }
         }
         else if (Goal_1 < Goal_2) {
-            System.out.println("The result is: " + Goal_1 + ":" + Goal_2);
-            System.out.println(Final[1] + " Win the game!");
+            System.out.println("The result is: " + Goal_1 + "-" + Goal_2);
+            System.out.println(Final[1] + " won The Tournament!");
         } else if (Goal_1 > Goal_2) {
-            System.out.println("The result is: " + Goal_1 + ":" + Goal_2);
-            System.out.println(Final[0] + " Win the game!");
+            System.out.println("The result is: " + Goal_1 + "-" + Goal_2);
+            System.out.println(Final[0] + " won The Tournament!");
         }
 
         goal_list.set(Final_index_1, goal_list.get(Final_index_1) + Goal_1);
@@ -423,8 +420,8 @@ public class Main {
                 max = i;
             }
         }
-        System.out.println("The top scorer is team" + team_list[goal_list.indexOf(max)]);
-        System.out.println("which scored total " + max + "goals");
+        System.out.println("The top scorer is team " + team_list[goal_list.indexOf(max)]);
+        System.out.println("Which scored a total of " + max + " goals");
 
 
     }
